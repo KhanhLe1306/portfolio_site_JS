@@ -96,6 +96,7 @@ img{
 /********************* REUSABLE CSS CLASSES *******************************/
 .section{
     padding: 2rem 0 4rem;
+    min-height: 100vh;
 }
 
 .section__title{
@@ -172,7 +173,7 @@ nav{
         padding: 2rem 1.5rem 4rem;
         box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
         border-radius: 1.5rem 1.5rem 0 0;
-        transition: .3s;
+        transition: .7s ease;
     }
 }
 
@@ -386,7 +387,7 @@ nav{
     font-size: var(--h2-font-size);
 }
 
-.skill__open-icon{
+.skill__arrow{
     font-size: 2rem;
     cursor: pointer;
 }
@@ -410,6 +411,12 @@ nav{
 .skill__percentage{
     display: block;
     background-color: var(--first-color);
+}
+
+.skill__lists{
+    display: grid;
+    row-gap: 1.5rem;
+    padding-left: 2.7rem;
 }
 
 .skill__html{
@@ -445,3 +452,18 @@ nav{
 .skill__time-management{
     width: 85%;
 }
+
+.skills__close .skill__lists{
+    height: 0;
+    overflow: hidden;
+}
+
+.skills__open .skill__arrow{
+    transform: rotate(-180deg);
+}
+
+.skills__open .skill__lists{
+    height: max-content;
+    margin-bottom: var(--mb-2-5);
+}
+
