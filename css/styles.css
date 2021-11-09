@@ -176,7 +176,7 @@ nav {
 		padding: 2rem 1.5rem 4rem;
 		box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 		border-radius: 1.5rem 1.5rem 0 0;
-		transition: 0.7s ease;
+		transition: 0.4s ease;
 	}
 }
 
@@ -221,8 +221,13 @@ nav {
 }
 
 /********************************** HOME *******************************/
+#home{
+	transition: 0.7s;
+}
+
 .home__container {
 	gap: 1rem;
+	transition: 0.7s;
 }
 
 .home__content {
@@ -476,17 +481,17 @@ nav {
 	justify-content: space-evenly;
 	font-size: var(--h1-font-size);
 	font-weight: var(--font-medium);
-	margin-bottom: 0.5rem;
+	margin-bottom: var(--mb-0-5);
 }
 
 .qual__header > .section__subtitle {
-	font-size: 0.85rem;
-	margin-bottom: 2rem;
+	font-size: var(--normal-font-size);
+	margin-bottom: var(--mb-2);
 }
 
 .education__work > * > i {
-	font-size: 2rem;
-	margin-right: 0.5rem;
+	font-size: var(--big-font-size);
+	margin-right: var(--mb-0-5);
 }
 
 .flex {
@@ -500,7 +505,23 @@ nav {
 
 .history {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr max-content 1fr;
+}
+
+.circle{
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background-color: var(--first-color);
+}
+
+.line{
+	display: block;
+	width: 1px;
+	background-color: var(--first-color);
+	height: 100%;
+	transform: translate(6.5px, -6.5px);
 }
 
 .event {
@@ -512,7 +533,7 @@ nav {
 }
 
 .event__title {
-	margin-bottom: 0.35rem;
+	margin-bottom: var(--mb-0-25);
 }
 
 .event__place {
@@ -525,5 +546,5 @@ nav {
 }
 
 .period > i {
-	margin-right: 0.3rem;
+	margin-right: var(--mb-0-25);
 }
