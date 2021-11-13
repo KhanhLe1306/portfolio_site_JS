@@ -1,4 +1,5 @@
 // MENU SHOW WHILE HIDDEN
+
 const navMenu = document.getElementById("nav-menu"),
 	navToggle = document.getElementById("nav-toggle"),
 	navClose = document.getElementById("nav-close");
@@ -21,56 +22,7 @@ const linkAction = () => {
 };
 navLinks.forEach((link) => link.addEventListener("click", linkAction));
 
-//OPEN SKILLS OF EACH BIG SKILL
-// const openArrows = document.querySelectorAll(".skill__open-icon");
-// const closeArrows = document.querySelectorAll("skill__close-icon");
-// const skillLists = document.querySelectorAll(".skill__lists");
-// if (openArrows) {
-// 	for (let i = 0; i < openArrows.length; i++) {
-// 		openArrows[i].addEventListener("click", () => {
-// 			skillLists[i].classList.remove("hide__skill-list");
-// 			openArrows;
-// 		});
-// 	}
-// }
-// if (closeArrows) {
-// 	for (let i = 0; i < closeArrows.length; i++) {
-// 		closeArrows[i].addEventListener("click", () => {
-// 			skillLists[i].classList.add("hide__skill-list");
-// 		});
-// 	}
-// }
-
-// const open_close_arrows = document.querySelectorAll("#open-close-arrow");
-// const skillLists = document.querySelectorAll(".skill__lists");
-// // open_close_arrows.forEach((e) => {
-// // 	e.addEventListener("click", () => {
-// // 		console.log("Inside");
-// // 		console.log(e.classList);
-// // 		if (e.classList.contains("uil-angle-down")) {
-// // 			e.classList.remove("uil-angle-down");
-// // 			e.classList.add("uil-angle-up");
-// // 		} else {
-// // 			e.classList.remove("uil-angle-up");
-// // 			e.classList.add("uil-angle-down");
-// // 		}
-// // 	});
-// // });
-
-// for (let i = 0; i < open_close_arrows.length; i++) {
-// 	open_close_arrows[i].addEventListener("click", () => {
-// 		if (open_close_arrows[i].classList.contains("uil-angle-down")) {
-// 			open_close_arrows[i].classList.remove("uil-angle-down");
-//             open_close_arrows[i].classList.add("uil-angle-up");
-//             skillLists[i].classList.remove("hide__skill-list");
-// 		} else {
-// 			open_close_arrows[i].classList.remove("uil-angle-up");
-//             open_close_arrows[i].classList.add("uil-angle-down");
-//             skillLists[i].classList.add("hide__skill-list");
-// 		}
-// 	});
-// }
-
+// Skills
 const skillArrows = document.querySelectorAll(".skill__arrow");
 skillArrows.forEach((a) => {
 	a.addEventListener("click", () => {
@@ -83,4 +35,43 @@ skillArrows.forEach((a) => {
 			classList.add("skills__open");
 		}
 	});
+});
+
+// ACTIVE MODEL
+const modelViews = document.querySelectorAll(".services__model"),
+	modelBtns = document.querySelectorAll(".services__button"),
+	modelCloses = document.querySelectorAll(".services__model-close");
+
+const showModel = (modelClicked) => {
+	modelViews[modelClicked].classList.add("active__model");
+};
+
+const hideModel = (modelIndex) => {
+	modelViews[modelIndex].classList.remove("active__model");
+};
+
+modelBtns.forEach((btn, i) => {
+	btn.addEventListener("click", () => {
+		showModel(i);
+	});
+});
+
+modelCloses.forEach((modelClose, i) => {
+	modelClose.addEventListener("click", () => {
+		hideModel(i);
+	});
+});
+
+var swiper = new Swiper(".mySwiper", {
+	cssMode: true,
+	navigation: {
+		nextEl: ".swiper-next",
+		prevEl: ".swiper-prev",
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	mousewheel: true,
+	keyboard: true,
 });
