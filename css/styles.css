@@ -328,6 +328,15 @@ nav {
 	transition: 0.3s;
 }
 
+.button--white{
+	background-color: white;
+	color: var(--first-color-second);
+}
+
+.button--white:hover{
+	background-color: white;
+}
+
 .button--flex {
 	display: inline-flex;
 	align-items: center;
@@ -776,3 +785,25 @@ nav {
 	/* Inspect this element from browser and found .swiper-pagination-bullet-active */
 	background-color: var(--first-color);
 }
+
+					/* PROJECT IN MIND */
+.project__bg{
+	background-color: var(--first-color);
+}
+
+.project__data > h3{
+	color: white;
+	margin-bottom: var(--mb-1-5);
+}
+
+.project__data{
+	padding-top: 1.5rem;
+	text-align: center;
+	color: white;
+}
+
+.project__container > img{
+	width: 275px;
+	justify-self: center;
+}
+
