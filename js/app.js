@@ -64,6 +64,7 @@ modelCloses.forEach((modelClose, i) => {
 
 var swiper = new Swiper(".mySwiper", {
 	cssMode: true,
+	loop:true,
 	navigation: {
 		nextEl: ".swiper-next",
 		prevEl: ".swiper-prev",
@@ -136,3 +137,18 @@ const showScrollUp = () => {
 }
 
 window.addEventListener('scroll', showScrollUp)
+
+//Theme change
+
+const changeTheme = document.querySelector('.change__theme')
+const themeIcon = document.querySelector('.theme__icon')
+changeTheme.addEventListener('click', () => {
+	document.querySelector('body').classList.toggle('dark__theme')
+	if (themeIcon.classList.contains('uil-moon')) {
+		themeIcon.classList.remove('uil-moon')
+		themeIcon.classList.add('uil-sun')
+	} else {
+		themeIcon.classList.remove("uil-sun");
+		themeIcon.classList.add("uil-moon");
+	}
+})
