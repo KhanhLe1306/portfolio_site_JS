@@ -75,3 +75,64 @@ var swiper = new Swiper(".mySwiper", {
 	mousewheel: true,
 	keyboard: true,
 });
+
+var testimonialSwiper = new Swiper(".swiper-testimonial", {
+	loop: true,
+	grabCursor: true,
+	spaceBetween: 48,
+	pagination: {
+		el: ".swiper-pagination-testimonial",
+		dynamicBullets: true,
+		clickable: true
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+		}
+	}
+});
+
+
+// Show active link when scrolling
+
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive() {
+	const offsetY = window.pageYOffset;
+	sections.forEach(current => {
+		const offsetTop = current.offsetTop - 50;
+		const sectionOffset = current.offsetHeight;
+		const sectionId = current.getAttribute('id');
+
+		if (offsetY > offsetTop && offsetY <= offsetTop + sectionOffset) {
+			document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active__link');
+		} else {
+			document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active__link');
+		}
+	})
+}
+
+window.addEventListener('scroll', scrollActive);
+
+//Show shadow at bottom screen when scroll over the home section
+const addBoxShadowHeader = () => {
+	if (window.pageYOffset > 80) {
+		document.querySelector('.header').classList.add('shadow_box');
+	} else {
+		document.querySelector('.header').classList.remove('shadow_box');
+	}
+}
+
+window.addEventListener('scroll', addBoxShadowHeader)
+
+//Show scroll up icon when window is at "about" section or below
+
+const showScrollUp = () => {
+	if (window.scrollY > 100) {
+		document.querySelector('.scroll__up').classList.add('scrollup__active');
+	} else {
+		document.querySelector('.scroll__up').classList.remove('scrollup__active');
+	}
+}
+
+window.addEventListener('scroll', showScrollUp)
