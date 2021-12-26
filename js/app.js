@@ -62,9 +62,9 @@ modelCloses.forEach((modelClose, i) => {
 	});
 });
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".portfolio__container", {
 	cssMode: true,
-	loop:true,
+	loop: true,
 	navigation: {
 		nextEl: ".swiper-next",
 		prevEl: ".swiper-prev",
@@ -84,71 +84,81 @@ var testimonialSwiper = new Swiper(".swiper-testimonial", {
 	pagination: {
 		el: ".swiper-pagination-testimonial",
 		dynamicBullets: true,
-		clickable: true
+		clickable: true,
 	},
 	breakpoints: {
 		568: {
 			slidesPerView: 2,
-		}
-	}
+		},
+	},
 });
-
 
 // Show active link when scrolling
 
-const sections = document.querySelectorAll('section[id]')
+const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
 	const offsetY = window.pageYOffset;
-	sections.forEach(current => {
+	sections.forEach((current) => {
 		const offsetTop = current.offsetTop - 50;
 		const sectionOffset = current.offsetHeight;
-		const sectionId = current.getAttribute('id');
+		const sectionId = current.getAttribute("id");
 
 		if (offsetY > offsetTop && offsetY <= offsetTop + sectionOffset) {
-			document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active__link');
+			document
+				.querySelector(".nav__menu a[href*=" + sectionId + "]")
+				.classList.add("active__link");
 		} else {
-			document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active__link');
+			document
+				.querySelector(".nav__menu a[href*=" + sectionId + "]")
+				.classList.remove("active__link");
 		}
-	})
+	});
 }
 
-window.addEventListener('scroll', scrollActive);
+window.addEventListener("scroll", scrollActive);
 
 //Show shadow at bottom screen when scroll over the home section
 const addBoxShadowHeader = () => {
 	if (window.pageYOffset > 80) {
-		document.querySelector('.header').classList.add('shadow_box');
+		document.querySelector(".header").classList.add("shadow_box");
 	} else {
-		document.querySelector('.header').classList.remove('shadow_box');
+		document.querySelector(".header").classList.remove("shadow_box");
 	}
-}
+};
 
-window.addEventListener('scroll', addBoxShadowHeader)
+window.addEventListener("scroll", addBoxShadowHeader);
 
 //Show scroll up icon when window is at "about" section or below
 
 const showScrollUp = () => {
 	if (window.scrollY > 100) {
-		document.querySelector('.scroll__up').classList.add('scrollup__active');
+		document.querySelector(".scroll__up").classList.add("scrollup__active");
 	} else {
-		document.querySelector('.scroll__up').classList.remove('scrollup__active');
+		document.querySelector(".scroll__up").classList.remove("scrollup__active");
 	}
-}
+};
 
-window.addEventListener('scroll', showScrollUp)
+window.addEventListener("scroll", showScrollUp);
 
 //Theme change
 
-const changeTheme = document.querySelector('.change__theme')
-const themeIcon = document.querySelector('.theme__icon')
-changeTheme.addEventListener('click', () => {
-	document.querySelector('body').classList.toggle('dark__theme')
-	if (themeIcon.classList.contains('uil-moon')) {
-		themeIcon.classList.remove('uil-moon')
-		themeIcon.classList.add('uil-sun')
+const changeTheme = document.querySelector(".change__theme");
+const themeIcon = document.querySelector(".theme__icon");
+changeTheme.addEventListener("click", () => {
+	document.querySelector("body").classList.toggle("dark__theme");
+	if (themeIcon.classList.contains("uil-moon")) {
+		themeIcon.classList.remove("uil-moon");
+		themeIcon.classList.add("uil-sun");
 	} else {
 		themeIcon.classList.remove("uil-sun");
 		themeIcon.classList.add("uil-moon");
 	}
-})
+});
+
+//certification swiper
+
+const certification__swiper = new Swiper(".certification__swiper", {
+	effect: "cards",
+	grabCursor: true,
+});
