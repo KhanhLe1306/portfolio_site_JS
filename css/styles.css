@@ -833,6 +833,10 @@ nav {
 	color: white;
 }
 
+.project__container{
+	padding-bottom: 2rem;
+}
+
 .project__container > img {
 	width: 275px;
 	justify-self: center;
@@ -945,6 +949,9 @@ nav {
 	background-color: var(--first-color);
 	color: white;
 }
+.footer__container{
+	margin: auto;
+}
 
 .footer__title,
 .footer__link {
@@ -967,6 +974,7 @@ nav {
 .social__media {
 	font-size: var(--h1-font-size);
 	margin-bottom: 2rem;
+	margin: auto;
 }
 
 .footer__section p {
@@ -1137,11 +1145,16 @@ nav {
 	.message__body {
 		min-width: 350px;
 	}
+<<<<<<< HEAD
 	.social__media {
 		padding-left: 1.5rem;
 	}
 	.demo__button {
 		padding: 0.25rem 1.5rem;
+=======
+	.demo__button{
+		padding: .25rem 1.5rem;
+>>>>>>> be940eb133fcc033e2362595f491347f360ff7a1
 	}
 }
 
@@ -1178,6 +1191,12 @@ nav {
 		border-radius: 1rem;
 	}
 
+<<<<<<< HEAD
+=======
+	.services__container{
+		gap: 3rem;
+	}
+>>>>>>> be940eb133fcc033e2362595f491347f360ff7a1
 }
 
 /* For large device */
@@ -1206,8 +1225,14 @@ nav {
 		min-width: 600px;
 	}
 
+<<<<<<< HEAD
 	.services__container {
 		grid-template-columns: repeat(3, 268px);
+=======
+	.services__container{
+		grid-template-columns: repeat(3, 230px);
+		grid-column-gap: 1rem;
+>>>>>>> be940eb133fcc033e2362595f491347f360ff7a1
 	}
 	.services__content {
 		padding-bottom: 7rem;
@@ -1219,6 +1244,7 @@ nav {
 	.services__button {
 		font-size: 1.3rem;
 	}
+<<<<<<< HEAD
 }
 
 /* CERTIFICAITON SWIPER */
@@ -1314,3 +1340,18 @@ nav {
 .certification__title {
 	color: var(--title-color);
 }
+=======
+
+	.footer__links{
+		align-items: flex-end;
+	}
+
+	.skills{
+		max-width: calc(768px + 64px);
+		padding: 0 32px;
+	}
+	.skill__description{
+		margin-right: 0;
+	}
+}
+>>>>>>> be940eb133fcc033e2362595f491347f360ff7a1
