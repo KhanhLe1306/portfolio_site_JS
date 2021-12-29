@@ -158,7 +158,33 @@ changeTheme.addEventListener("click", () => {
 
 //certification swiper
 
+// const certification__swiper = new Swiper(".certification__swiper", {
+// 	pagination: {
+// 		el: ".certification__pagination",
+// 		dynamicBullets: true,
+// 	},
+// 	breakpoints: {
+// 		568: {
+// 			slidesPerView: 2,
+// 		},
+// 	},
+// });
+
 const certification__swiper = new Swiper(".certification__swiper", {
-	effect: "cards",
+	loop: true,
 	grabCursor: true,
+	spaceBetween: 24,
+	pagination: {
+		el: ".certification__pagination",
+		dynamicBullets: true,
+		clickable: true,
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		1024: {
+			slidesPerView: 3,
+		}
+	},
 });
